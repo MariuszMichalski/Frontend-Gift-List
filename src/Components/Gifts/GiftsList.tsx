@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {GiftEntity} from "../../types/gifts";
+import {GiftsTable} from "./GiftsTable";
 
 export const GiftsList = () => {
     const [giftsList, setGiftsList] = useState<GiftEntity[] | null>(null)
@@ -16,9 +17,11 @@ export const GiftsList = () => {
 
     if (giftsList === null) {
         return (
-            <p>Wczytywanie</p>
+            <p>Loading</p>
         )
     }
-
-    return null;
+    return <>
+    <h1>Gifts</h1>
+        <GiftsTable gifts={giftsList}/>
+    </>
 }
