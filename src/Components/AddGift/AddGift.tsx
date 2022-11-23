@@ -1,17 +1,23 @@
 import React, {useState} from "react";
 import { CreateGiftReq } from "types";
+import {Spinner} from "../common/Spinner/Spinner";
 
 export const AddGift = () => {
     const [form, setForm] = useState<CreateGiftReq>({
         name: '',
         count: 0,
     })
+    const [loading, setLoading] = useState<boolean>(false)
 
     const updateForm = (key: string, value: any) => {
         setForm(form => ({
             ...form,
             [key]: value,
         }))
+    }
+
+    if (loading) {
+        return <Spinner/>
     }
     
     return <form>
