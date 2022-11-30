@@ -1,10 +1,17 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import React from "react";
 
 export const Header = () => {
-    return <>
-        <h1>Gifts App</h1>
-        <h3>Menu: <Link to="/test">Test!</Link> | <Link to="/gift">Gifts!</Link>
-        </h3>
-    </>
+
+    const colorLink = ({isActive}: {
+        isActive: boolean;
+    }) => ({color: isActive ? 'green' : 'black'})
+
+    return (
+        <>
+            <h1>Gifts App</h1>
+            <h3>Menu: <NavLink style={colorLink} to="/test">Test!</NavLink> | <NavLink style={colorLink} to="/gift">Gifts!</NavLink>
+            </h3>
+        </>
+    )
 }
