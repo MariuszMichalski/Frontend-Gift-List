@@ -10,7 +10,7 @@ export const Header = () => {
     return (
         <>
             <h1>Gifts App</h1>
-            <h3>Menu: <NavLink style={colorLink} to="/test">Test!</NavLink> | <NavLink style={colorLink} to="/gift">Gifts!</NavLink>
+            <h3>Menu: <NavLink style={colorLink} to="/child">Children!</NavLink> | <NavLink style={colorLink} to="/gift">Gifts!</NavLink>
             </h3>
         </>
     )
